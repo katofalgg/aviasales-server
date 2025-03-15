@@ -34,7 +34,7 @@ const delay = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
   let searchInProcess = false;
 
   let lastSentTime = null;
-  const sendHours = [15, 21];
+  const sendHours = [6, 12];
 
   process.on("SIGINT", () => {
     if (searchInProcess) {
@@ -55,7 +55,6 @@ const delay = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
       searchInProcess = false;
 
       const currentHour = new Date().getHours();
-      console.log(currentHour)
       if (sendHours.includes(currentHour) && lastSentTime !== currentHour) {
         await sendStatistics();
         lastSentTime = currentHour;
