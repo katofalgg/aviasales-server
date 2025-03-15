@@ -55,7 +55,7 @@ const delay = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
       searchInProcess = false;
 
       const currentHour = new Date().getHours();
-
+      console.log(sendHours.includes(currentHour) && lastSentTime !== currentHour, 'abob')
       if (sendHours.includes(currentHour) && lastSentTime !== currentHour) {
         await sendStatistics();
         lastSentTime = currentHour;
