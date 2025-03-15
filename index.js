@@ -34,7 +34,7 @@ const delay = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
   let searchInProcess = false;
 
   let lastSentTime = null;
-  const sendHours = [14, 20];
+  const sendHours = [15, 21];
 
   process.on("SIGINT", () => {
     if (searchInProcess) {
