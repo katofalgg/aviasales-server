@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 
 export default async function collectStatistics(flightData) {
   try {
+    console.log(flightData);
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
     const rootDir = resolve(__dirname, "../");
