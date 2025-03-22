@@ -5,7 +5,8 @@ import { fileURLToPath } from "url";
 import sendMessage from "../modules/telegram.js";
 import { config, searchParams } from "../config.js";
 import { BASE_URL } from "../modules/aviasales.js";
-import logMessage from "./log-message.js";
+
+const getDateString = (date) => date.toISOString().split("T")[0];
 
 export default async function sendStatistics() {
   try {
@@ -25,7 +26,18 @@ export default async function sendStatistics() {
     }
 
     const fileContent = fs.readFileSync(filePath, "utf-8");
-    const cheapest = JSON.parse(fileContent).reduce(
+
+    const today = getDateString(new Date());
+    const yesterday = getDateString(new Date(Date.now() - 24 * 60 * 60 * 1000));
+
+    const filteredFlights = JSON.parse(fileContent).filter(
+      ({ currentDate }) => {
+        if (!currentDate) return false;
+        return [today, yesterday].includes(currentDate.split("T")[0]);
+      }
+    );
+
+    const cheapest = filteredFlights.reduce(
       (min, current) => (current.price > min.price ? min : current),
       {
         price: Infinity,
