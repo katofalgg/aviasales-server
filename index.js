@@ -1,4 +1,4 @@
-import { config, searchParams } from "./config.js";
+import { searchParams } from "./config.js";
 import searchTickets from "./modules/aviasales.js";
 import logError from "./utils/log-error.js";
 import logMessage from "./utils/log-message.js";
