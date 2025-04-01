@@ -5,7 +5,7 @@ import logMessage from "../utils/log-message.js";
 import getJoke from "./jokes.js";
 
 const statMessage = async (ticket, hours, minutes) => {
-  const joke = await getJoke();
+  const joke = getJoke();
   return (
     `*Никуда вы пока не летите! 🤡*\n\n` +
     `📊 *Но у меня есть для тебя статистика и анекдот (в конце):* \n\n` +

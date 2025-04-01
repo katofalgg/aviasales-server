@@ -1,5 +1,6 @@
 import { searchParams } from "./config.js";
 import searchTickets from "./modules/aviasales.js";
+import { setJokesData } from "./modules/jokes.js";
 import logError from "./utils/log-error.js";
 import logMessage from "./utils/log-message.js";
 import sendStatistics from "./utils/send-statistics.js";
@@ -35,6 +36,8 @@ const delay = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
   let lastSentTime = null;
   const sendHours = [6, 12];
+
+  await setJokesData();
 
   process.on("SIGINT", () => {
     if (searchInProcess) {
