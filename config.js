@@ -8,11 +8,11 @@ export const config = {
 };
 
 export const searchParams = {
-  maxPrice: 20000,
-  maxTransferTime: 300,
-  origin: "ICN",
-  destination: "KZN",
+  maxPrice: 9000,
+  maxTransferTime: 360,
+  origin: "SHA",
+  destination: "DAD",
   currency: "RUB",
-  departDateFrom: "2025-06-06",
-  departDateTo: "2025-06-09",
+  departDateFrom: "2026-01-24",
+  departDateTo: "2026-01-24",
 };
