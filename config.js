@@ -8,7 +8,7 @@ export const config = {
 };
 
 export const searchParams = {
-  maxPrice: 10000,
+  maxPrice: 11000,
   maxTransferTime: 360,
   origin: "SHA",
   destination: "DAD",
