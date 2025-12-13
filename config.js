@@ -7,6 +7,7 @@ export const config = {
   telegramChatId: process.env.CHAT_ID,
 };
 
+//change here
 export const searchParams = {
   maxPrice: 11000,
   maxTransferTime: 360,
