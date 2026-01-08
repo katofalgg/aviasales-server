@@ -10,9 +10,9 @@ export const config = {
 export const searchParams = {
   maxPrice: 10000,
   maxTransferTime: 360,
-  origin: "SHA",
-  destination: "DAD",
+  origin: "DAD",
+  destination: "ICN",
   currency: "RUB",
-  departDateFrom: "2026-01-24",
-  departDateTo: "2026-01-24",
+  departDateFrom: "2026-03-01",
+  departDateTo: "2026-03-01",
 };
